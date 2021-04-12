@@ -1,0 +1,35 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "this will be used for the making API call from the health dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node-dev src/index.ts"
+  },
+  "author": "subhash.bvb@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@commonauth/common": "^1.0.20",
+    "@types/cookie-session": "^2.0.39",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/mongoose": "^5.7.22",
+    "@types/socket.io": "^2.1.13",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^6.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.18",
+    "mongoose-update-if-current": "^1.4.0",
+    "socket.io": "^4.0.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.37",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}

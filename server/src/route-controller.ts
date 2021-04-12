@@ -1,0 +1,16 @@
+import { Application } from 'express';
+import { healthDataRoutes } from './routes/HealthDataRoutes';
+import { StaticRoutes } from './routes/StaticFileRoutes';
+
+class RouteController {
+  constructor(private app: Application) {
+    this.apply();
+  }
+
+  private apply(): void {
+    this.app.use('/api/', healthDataRoutes);
+    const a = new StaticRoutes(this.app);
+  }
+}
+
+export { RouteController };
