@@ -4,6 +4,7 @@ import { useState } from '@/app-store/index';
 import HealthDashboardHome from '@/app-components/app-view-components/HealthDashboardHome.vue';
 import PatientActivity from '@/app-components/app-view-components/PatientActivity.vue';
 import LandingComponent from '@/app-components/app-view-components/LandingComponent.vue';
+import PatientProfile from '@/app-components/app-view-components/PatientProfile.vue';
 const routes = [
   {
     path: '/',
@@ -21,6 +22,13 @@ const routes = [
     name: 'PatientActivity',
     component: PatientActivity,
   },
+
+  {
+    path: '/patient-profile',
+    name: 'PatientProfile',
+    component: PatientProfile,
+  },
+
   // ,
   // {
   //   path: '*',

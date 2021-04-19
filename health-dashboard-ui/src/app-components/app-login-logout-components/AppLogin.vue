@@ -2,7 +2,7 @@
     <body class="az-body">
     <div class="az-signin-wrapper">
       <div class="az-card-signin">
-        <h1 class="az-logo">Heart "O" Meter</h1>
+        <h1 class="az-logo">HealthOMeter</h1>
         <div class="az-signin-header">
           <h2>{{state.error ==='' ? `Welcome back!` : state.error}}</h2>
           <h4>Please sign in to continue</h4>

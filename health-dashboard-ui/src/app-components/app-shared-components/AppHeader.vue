@@ -52,9 +52,10 @@
           <div class="az-header-message">
             <a href="#"><i class="typcn typcn-messages"></i></a>
           </div><!-- az-header-message -->
-          <div class="dropdown az-header-notification">
-            <a href="" class="new"><i class="typcn typcn-bell"></i></a>
-            <div class="dropdown-menu">
+
+          <div class="dropdown az-header-notification" v-on:click="notificationOn" >
+            <a class="new"><i class="typcn typcn-bell"></i></a>
+            <div class="dropdown-menu" v-bind:class="{ show: isNotificationActive }"  >
               <div class="az-dropdown-header mg-b-20 d-sm-none">
                 <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
               </div>
@@ -93,9 +94,9 @@
               <div class="dropdown-footer"><a href="">View All Notifications</a></div>
             </div><!-- dropdown-menu -->
           </div><!-- az-header-notification -->
-          <div class="dropdown az-profile-menu">
-            <a href="" class="az-img-user"><img src="../../assets/img/faces/face1.jpg" alt=""></a>
-            <div class="dropdown-menu">
+          <div class="dropdown az-profile-menu" v-on:click="profileOn" >
+            <a  class="az-img-user"><img src="../../assets/img/faces/face1.jpg" alt=""></a>
+            <div class="dropdown-menu" v-bind:class="{ show: isProfileActive }" >
               <div class="az-dropdown-header d-sm-none">
                 <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
               </div>
@@ -106,8 +107,8 @@
                 <h6>Aziana Pechon</h6>
                 <span>Premium Member</span>
               </div><!-- az-header-profile -->
-
-              <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
+<router-link to="/patient-profile"><a class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a></router-link> 
+              
               <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
               <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
               <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
@@ -120,9 +121,36 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
   name: 'AppHeader',
+
+  setup() {
+    const isProfileActive = ref(false)
+    const isNotificationActive = ref(false)
+
+    function notificationOn(){
+      isProfileActive.value =false;
+      isNotificationActive.value = !isNotificationActive.value
+
+    }  
+    function profileOn() {
+      isProfileActive.value = !isProfileActive.value
+      isNotificationActive.value = false;
+    }    
+    
+    return{
+            isProfileActive,
+            isNotificationActive,
+            notificationOn,
+            profileOn
+
+          }
+      }
+
+
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
