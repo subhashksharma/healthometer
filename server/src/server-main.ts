@@ -54,7 +54,7 @@ export class ServerMain {
       console.log('Running server on port %s', this.port);
     });
 
-    this.io?.on('connect', (socket: any) => {
+    this.io?.on('connect', (socket: SocketIO.Socket) => {
       console.log('Connected client on port %s.', this.port);
       // socket.on('message', (m: Message) => {
       //   console.log('[server](message): %s', JSON.stringify(m));
@@ -68,7 +68,9 @@ export class ServerMain {
         socket.emit('message', data);
       }, 3000);
 
-      socket.on('disconnect', () => {
+      socket.on('forceDisconnect', () => {
+        console.log('Client disconnecting');
+        socket.disconnect();
         console.log('Client disconnected');
       });
     });

@@ -24,34 +24,20 @@
                   <h6>All Categories</h6>
                 </div><!-- media-body -->
               </div><!-- media -->
-              <a class="btn btn-purple" @click="getRealtimeData" >Export</a>
+              <a class="btn btn-purple"  >Export</a>
             </div>
           </div><!-- az-dashboard-one-title -->
 
 </template>
 
 <script>
-
-import io from "socket.io-client";
-var socket = io.connect("http://localhost:8080");
-   
+  
 export default {
     name : 'DashBoardHeaderComponent',
     setup() {
-    
-    socket.on('connect', (data) => {
-                console.log('Connected to server')
-            });
-
-     function  getRealtimeData() {
-       console.log('got click ')
-        socket.on("message", fetchedData => {
-        console.log(JSON.stringify(fetchedData));
-      })
-    };
-
+  
     return {
-      getRealtimeData
+      
     }
     }
 }
