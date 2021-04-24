@@ -111,47 +111,23 @@
         <!-- card-header -->
 
         <div class="card-body row">
-          <div class="table-responsive">
+          <div class="table-responsive" style="height:300px">
             <table class="table table-hover mg-b-0">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Salary</th>
+                  <th>Patient ID</th>
+                  <th>Patient Name</th>
+                  <th>Patient Age</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>$320,800</td>
+                <tr v-for="data in patientData" :key="data.id">
+                  <th scope="row">{{data.id}}</th>
+                  <td>{{data.name}}</td>
+                  <td>{{data.age}}</td>
+
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Garrett Winters</td>
-                  <td>Accountant</td>
-                  <td>$170,750</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Ashton Cox</td>
-                  <td>Junior Technical Author</td>
-                  <td>$86,000</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Cedric Kelly</td>
-                  <td>Senior Javascript Developer</td>
-                  <td>$433,060</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Airi Satou</td>
-                  <td>Accountant</td>
-                  <td>$162,700</td>
-                </tr>
+  
               </tbody>
             </table>
           </div>
@@ -183,6 +159,19 @@ export default {
   },
   setup(props) {
       const activetab = ref(false)
+      const patientData = ref([
+          	{
+      	name: 'Steve',
+        age: 56,
+        id: 1
+      },
+      {
+        name: 'Dave',
+        age: 33,
+        id: 2
+      }
+      ]);
+
 
   
     function isRealTimeMonitoringOn() {
@@ -199,6 +188,8 @@ export default {
         console.log('got click ')
         socket.on("message", fetchedData => {
         console.log(JSON.stringify(fetchedData));
+
+        patientData.value.push(fetchedData);
       });
      }else {
        console.log('got click for disconnect')
@@ -210,7 +201,8 @@ export default {
     }
       return {
         activetab,
-        isRealTimeMonitoringOn  
+        isRealTimeMonitoringOn ,
+        patientData
       }
   }
 };

@@ -61,12 +61,12 @@ export class ServerMain {
       //   this.io?.emit('message', m);
       // });
 
-      setInterval(function () {
+      setInterval(function ()
+      {
         let data = Math.floor(Math.random() * 100 + 1);
         console.log('randdom  generator ' + data);
-
-        socket.emit('message', data);
-      }, 3000);
+        socket.emit('message', {"name": "Steve","age": 56,"id": data})
+               }, 3000);
 
       socket.on('forceDisconnect', () => {
         console.log('Client disconnecting');
