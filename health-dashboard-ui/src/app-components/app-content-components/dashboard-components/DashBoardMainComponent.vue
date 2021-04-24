@@ -13,16 +13,12 @@
 <script>
 import DashBoardHeaderComponent from '@/app-components/app-content-components/dashboard-components/DashBoardHeaderComponent.vue'
 import TabBodyComponents from '@/app-components/app-content-components/dashboard-components/TabBodyComponents.vue'
-import PlanetChart from '@/app-components/app-content-components/PlanetChart.vue'
-
-import Chart from 'chart.js'
 
 export default {
     name:'DashBoardMainComponent',
     components: {
     DashBoardHeaderComponent,
-    TabBodyComponents,
-    PlanetChart
+    TabBodyComponents
   },
 }
 </script>

@@ -56,10 +56,17 @@ export class ServerMain {
 
     this.io?.on('connect', (socket: any) => {
       console.log('Connected client on port %s.', this.port);
-      socket.on('message', (m: Message) => {
-        console.log('[server](message): %s', JSON.stringify(m));
-        this.io?.emit('message', m);
-      });
+      // socket.on('message', (m: Message) => {
+      //   console.log('[server](message): %s', JSON.stringify(m));
+      //   this.io?.emit('message', m);
+      // });
+
+      setInterval(function () {
+        let data = Math.floor(Math.random() * 100 + 1);
+        console.log('randdom  generator ' + data);
+
+        socket.emit('message', data);
+      }, 3000);
 
       socket.on('disconnect', () => {
         console.log('Client disconnected');

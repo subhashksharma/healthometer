@@ -24,8 +24,7 @@
                   <h6>All Categories</h6>
                 </div><!-- media-body -->
               </div><!-- media -->
-              <a href="" class="btn btn-purple" @click="getRealtimeData" >Export</a>
-              <button class="btn btn-purple" @click="getRealtimeData">Export1</button>
+              <a class="btn btn-purple" @click="getRealtimeData" >Export</a>
             </div>
           </div><!-- az-dashboard-one-title -->
 
@@ -39,13 +38,14 @@ var socket = io.connect("http://localhost:8080");
 export default {
     name : 'DashBoardHeaderComponent',
     setup() {
+    
     socket.on('connect', (data) => {
-                this.connect = data;
+                console.log('Connected to server')
             });
 
      function  getRealtimeData() {
        console.log('got click ')
-      socket.on("newdata", fetchedData => {
+        socket.on("message", fetchedData => {
         console.log(JSON.stringify(fetchedData));
       })
     };
