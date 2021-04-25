@@ -2,6 +2,80 @@
   
             <div class="az-profile-body">
 
+
+<div class="row mg-b-20">
+
+
+<div class="col-sm-6 col-lg-4 col-xl-3">
+           
+            <div class="card card-body card-dashboard-fifteen">
+              <h1>257</h1>
+              <label class="tx-purple">Support Requests</label>
+              <span>The total number of support requests that have come in.</span>
+              <div class="chart-wrapper">
+                <div id="flotChart1" class="flot-chart" style="padding: 0px;">
+                  <canvas class="flot-base" width="253" height="127" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 253.5px; height: 127px;"></canvas>
+                  <canvas class="flot-overlay" width="253" height="127" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 253.5px; height: 127px;"></canvas>
+                  </div>
+              </div><!-- chart-wrapper -->
+            </div><!-- card -->
+          </div>
+
+
+<div class="col-sm-6 col-lg-4 col-xl-3">
+           
+            <div class="card card-body card-dashboard-fifteen">
+              <h1>257</h1>
+              <label class="tx-purple">Support Requests</label>
+              <span>The total number of support requests that have come in.</span>
+              <div class="chart-wrapper">
+                <div id="flotChart1" class="flot-chart" style="padding: 0px;">
+                  <canvas class="flot-base" width="253" height="127" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 253.5px; height: 127px;"></canvas>
+                  <canvas class="flot-overlay" width="253" height="127" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 253.5px; height: 127px;"></canvas>
+                  </div>
+              </div><!-- chart-wrapper -->
+            </div><!-- card -->
+          </div>
+
+<div class="col-sm-6 col-lg-4 col-xl-3">
+           
+            <div class="card card-body card-dashboard-fifteen">
+              <h1>257</h1>
+              <label class="tx-purple">Support Requests</label>
+              <span>The total number of support requests that have come in.</span>
+              <div class="chart-wrapper">
+                <div id="flotChart1" class="flot-chart" style="padding: 0px;">
+                  <canvas class="flot-base" width="253" height="127" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 253.5px; height: 127px;"></canvas>
+                  <canvas class="flot-overlay" width="253" height="127" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 253.5px; height: 127px;"></canvas>
+                  </div>
+              </div><!-- chart-wrapper -->
+            </div><!-- card -->
+          </div>
+
+
+<div class="col-sm-6 col-lg-4 col-xl-3">
+           
+            <div class="card card-body card-dashboard-fifteen">
+              <h1>257</h1>
+              <label class="tx-purple">Support Requests</label>
+              <span>The total number of support requests that have come in.</span>
+              <div class="chart-wrapper">
+                <div id="flotChart1" class="flot-chart" style="padding: 0px;">
+                  <canvas class="flot-base" width="253" height="127" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 253.5px; height: 127px;"></canvas>
+                  <canvas class="flot-overlay" width="253" height="127" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 253.5px; height: 127px;"></canvas>
+                  </div>
+              </div><!-- chart-wrapper -->
+            </div><!-- card -->
+          </div>
+      
+
+</div>
+
+
+<hr class="mg-y-40">
+
+
+
             <div class="row mg-b-20">
               <div class="col-md-7 col-xl-8">
                 <div class="az-profile-view-chart">
@@ -117,6 +191,8 @@
 
 <script>
 export default {
+
+
 
 }
 </script>
