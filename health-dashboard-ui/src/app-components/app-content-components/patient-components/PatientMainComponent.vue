@@ -11,6 +11,8 @@
 <script>
 import PatientSideBarComponent from '@/app-components/app-content-components/patient-components/PatientSideBarComponent.vue'
 import PatientTabBodyComponent from '@/app-components/app-content-components/patient-components/PatientTabBodyComponent.vue'
+
+
 export default {
   name:'PatientMainComponent',
   components:{
