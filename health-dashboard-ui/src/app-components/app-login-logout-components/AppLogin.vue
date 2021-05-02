@@ -7,7 +7,22 @@
           <h2>{{state.error ==='' ? `Welcome back!` : state.error}}</h2>
           <h4>Please sign in to continue</h4>
 
-          <form @submit.prevent="loginToSystem">
+        <form @submit.prevent="loginToSystem">
+         <div class="form-group">
+              <label class="rdiobox">
+                <input name="radio" type="radio" :value="'doctor'" @click="setLoginAs">
+                <span>As Doctor</span>
+              </label>
+            </div><!-- form-group -->
+
+          <div class="form-group">
+               <label class="rdiobox">
+                <input name="radio" type="radio" :value="'patient'" @click="setLoginAs">
+                <span>As Patient</span>
+              </label>
+            </div><!-- form-group -->
+
+
             <div class="form-group">
               <label>Email</label>
               <input type="text" class="form-control" placeholder="Enter your email" v-model="state.email">
@@ -41,6 +56,12 @@ name:'AppLogin',
 setup( ) {
 
   const state = useState();
+
+
+  function setLoginAs(event) {
+    state.loginAs = event.target.value;
+  }
+
   async function  loginToSystem() {
        console.log(state.email);
        state.screenLock = true;
@@ -50,19 +71,23 @@ setup( ) {
             state.screenLock = false;
             state.showSpinner = false;
             state.isLoggedIn = true;
-          router.push('health-dashboard')
-         
+            if(state.loginAs==='patient'){
+              router.push('health-dashboard')
+            }
+            if(state.loginAs==='doctor'){
+              router.push('doctor-dashboard')
+            } 
       }else{
          await new Promise(resolve => setTimeout(resolve, 300));
             state.screenLock = false;
             state.showSpinner = false;
             state.isLoggedIn = true;
-        state.error ='invalid login'
+            state.error ='invalid login'
       }   
   }
-
   return {
     state,
+    setLoginAs,
     loginToSystem
   }
 }

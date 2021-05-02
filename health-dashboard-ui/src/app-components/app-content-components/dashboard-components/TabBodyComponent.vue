@@ -15,10 +15,10 @@
               <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
             </nav>
           </div>
-          <OverviewComponents v-if="activetab === 1" ></OverviewComponents>
-          <StatComponents v-if="activetab === 2" ></StatComponents>
-          <DemographicsComponents v-if="activetab === 3"></DemographicsComponents>
-          <MoreComponents v-if="activetab === 4"></MoreComponents>
+          <OverviewComponent v-if="activetab === 1" ></OverviewComponent>
+          <StatComponent v-if="activetab === 2" ></StatComponent>
+          <DemographicsComponent v-if="activetab === 3"></DemographicsComponent>
+          <MoreComponent v-if="activetab === 4"></MoreComponent>
           </div>
           
 </template>
@@ -27,18 +27,18 @@
 
 import { ref } from 'vue'
 
-import OverviewComponents from '@/app-components/app-content-components/dashboard-components/OverviewComponents.vue'
-import StatComponents from '@/app-components/app-content-components/dashboard-components/StatComponents.vue'
-import DemographicsComponents from '@/app-components/app-content-components/dashboard-components/DemographicsComponents.vue'
-import MoreComponents from '@/app-components/app-content-components/dashboard-components/MoreComponents.vue'
+import OverviewComponent from '@/app-components/app-content-components/dashboard-components/OverviewComponent.vue'
+import StatComponent from '@/app-components/app-content-components/dashboard-components/StatComponent.vue'
+import DemographicsComponent from '@/app-components/app-content-components/dashboard-components/DemographicsComponent.vue'
+import MoreComponent from '@/app-components/app-content-components/dashboard-components/MoreComponent.vue'
 export default {
     
-name:"TabBodyComponents",
+name:"TabBodyComponent",
 components: {
-    OverviewComponents,
-    StatComponents,
-    DemographicsComponents,
-    MoreComponents
+    OverviewComponent,
+    StatComponent,
+    DemographicsComponent,
+    MoreComponent
     
   },
 

@@ -153,7 +153,7 @@ let socket = io({
 
  
 export default {
-  name: 'StatComponents',
+  name: 'StatComponent',
   components: {
     GerericPieChartComponent,
   },

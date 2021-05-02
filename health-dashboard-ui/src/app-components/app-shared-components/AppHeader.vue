@@ -107,7 +107,8 @@
                 <h6>Aziana Pechon</h6>
                 <span>Premium Member</span>
               </div><!-- az-header-profile -->
-<router-link to="/patient-profile"><a class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a></router-link> 
+            
+            <router-link to="/patient-profile"><a class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a></router-link> 
               
               <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
               <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>

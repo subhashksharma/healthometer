@@ -43,7 +43,7 @@ import GenericChartComponent from '@/app-components/app-utils-components/Generic
 import {getChartData} from "@/app-helpers/chartServerData.js"
 
 export default {
-     name:'OverviewComponents',
+     name:'OverviewComponent',
      components:{
       GenericChartComponent
      },

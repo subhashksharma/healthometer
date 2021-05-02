@@ -5,6 +5,7 @@ import HealthDashboardHome from '@/app-components/app-view-components/HealthDash
 import PatientActivity from '@/app-components/app-view-components/PatientActivity.vue';
 import LandingComponent from '@/app-components/app-view-components/LandingComponent.vue';
 import PatientProfile from '@/app-components/app-view-components/PatientProfile.vue';
+import DoctorDashboardHome from '@/app-components/app-view-components/doctor-view/DoctorDashboardHome.vue';
 const routes = [
   {
     path: '/',
@@ -15,6 +16,12 @@ const routes = [
     path: '/health-dashboard',
     name: 'HealthDashboardHome',
     component: HealthDashboardHome,
+  },
+
+  {
+    path: '/doctor-dashboard',
+    name: 'DoctorDashboardHome',
+    component: DoctorDashboardHome,
   },
 
   {
@@ -44,11 +51,11 @@ const router = createRouter({
 
 // router.beforeEach((to, from, next) => {
 //   const state = useState();
-//   console.log(' I am not logged in' + useState());
-//   if (!state.isLoggedIn && to.path !== '/') {
-//     console.log(' I am not logged in');
-//     return next({ path: '/' });
-//   }
+//   console.log(' I am not logged in ::::::' + state);
+//   // if (!state.isLoggedIn && to.path !== '/') {
+//   //   console.log(' I am not logged in');
+//   //   return next({ path: '/' });
+//   // }
 //   next();
 // });
 
