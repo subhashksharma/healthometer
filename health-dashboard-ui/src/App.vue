@@ -3,7 +3,7 @@
   <app-screen-lock v-if="state.screenLock"></app-screen-lock>
   <!-- progress spinner -->
   <app-spinner v-if="state.showSpinner"></app-spinner>
-  <router-view />
+  <router-view ></router-view>
 </template>
 
 <script>
@@ -34,5 +34,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/azia.scss';
+/* @import '@/assets/scss/azia.scss'; */
 </style>
