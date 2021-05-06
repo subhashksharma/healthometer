@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthometerarm-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthometerarm
+  template:
+    metadata:
+      labels:
+        app: healthometerarm
+    spec:
+      containers:
+        - name: healthometerarm
+          image: subhashbvb/healthometerarm
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthometerarm-srv
+spec:
+  type: LoadBalancer
+  selector:
+    app: healthometerarm
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
