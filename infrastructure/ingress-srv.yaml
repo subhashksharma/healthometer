@@ -7,20 +7,20 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
-    - host: admin.relentlessstrength.in
+    - host: healthometer.duckdns.org
       http:
         paths:
           - path: /?(.*)
             backend:
-              serviceName: shop-admin-srv
-              servicePort: 8787
+              serviceName: healthometerarm-srv
+              servicePort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
   annotations:
     service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: "true"
-    service.beta.kubernetes.io/do-loadbalancer-hostname: "www.admin.relentlessstrength.in"
+    service.beta.kubernetes.io/do-loadbalancer-hostname: "http://healthometer.duckdns.org/"
   labels:
     helm.sh/chart: ingress-nginx-2.0.3
     app.kubernetes.io/name: ingress-nginx
