@@ -3,8 +3,9 @@ import cors from 'cors';
 import * as http from 'http';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
+import mongoStart from './databaseutils/mongoConnect';
 
-import { Message } from './model';
+//Custom import
 import { RouteController } from './route-controller';
 
 export class ServerMain {
@@ -25,7 +26,6 @@ export class ServerMain {
   private createApp(): void {
     this.app = express();
     this.app.use(cors());
-
     const route = new RouteController(this.app);
   }
 
@@ -43,6 +43,10 @@ export class ServerMain {
       })
     );
     this.port = process.env.PORT || ServerMain.PORT;
+
+    mongoStart(
+      'mongodb+srv://subhash:subhash@shopping-btf66.gcp.mongodb.net/authservice'
+    );
   }
 
   private sockets(): void {
@@ -61,12 +65,11 @@ export class ServerMain {
       //   this.io?.emit('message', m);
       // });
 
-      setInterval(function ()
-      {
+      setInterval(function () {
         let data = Math.floor(Math.random() * 100 + 1);
         console.log('randdom  generator ' + data);
-        socket.emit('message', {"name": "Steve","age": 56,"id": data})
-               }, 3000);
+        socket.emit('message', { name: 'Steve', age: 56, id: data });
+      }, 3000);
 
       socket.on('forceDisconnect', () => {
         console.log('Client disconnecting');
