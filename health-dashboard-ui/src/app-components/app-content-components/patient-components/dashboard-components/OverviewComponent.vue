@@ -28,7 +28,7 @@
 
             <div class="col-sm-8 col-md-6 col-xl-4 mg-t-20 mg-md-t-0"> 
               <div class="az-content-label az-content-label-sm mg-b-15">{{dataCheck}}</div>
-              <div class="ht-200 ht-lg-250"><GenericChartComponent @dataCheck="'dataCheck'" ></GenericChartComponent></div>
+              <div class="ht-200 ht-lg-250"><GenericChartComponent v-bind:nameCheck="'cameraName'" ></GenericChartComponent></div>
            
              </div>
     

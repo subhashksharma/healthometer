@@ -1,33 +1,26 @@
 import { createWebHistory, createRouter } from 'vue-router';
 
 import { useState } from '@/app-store/index';
-import HealthDashboardHome from '@/app-components/app-view-components/HealthDashboardHome.vue';
-import PatientActivity from '@/app-components/app-view-components/PatientActivity.vue';
-import LandingComponent from '@/app-components/app-view-components/LandingComponent.vue';
-import PatientProfile from '@/app-components/app-view-components/PatientProfile.vue';
-import DoctorDashboardHome from '@/app-components/app-view-components/doctor-view/DoctorDashboardHome.vue';
+import AppLandingComponent from '@/app-components/app-view-components/patient-view/AppLandingComponent.vue';
+import PatientHealthDashboard from '@/app-components/app-view-components/patient-view/PatientHealthDashboard.vue';
+import PatientProfile from '@/app-components/app-view-components/patient-view/PatientProfile.vue';
+import DoctorDashboard from '@/app-components/app-view-components/doctor-view/DoctorDashboard.vue';
 const routes = [
   {
     path: '/',
-    name: 'LandingComponent',
-    component: LandingComponent,
+    name: 'AppLandingComponent',
+    component: AppLandingComponent,
   },
   {
-    path: '/health-dashboard',
-    name: 'HealthDashboardHome',
-    component: HealthDashboardHome,
+    path: '/patient-health-dashboard',
+    name: 'PatientHealthDashboard',
+    component: PatientHealthDashboard,
   },
 
   {
     path: '/doctor-dashboard',
-    name: 'DoctorDashboardHome',
-    component: DoctorDashboardHome,
-  },
-
-  {
-    path: '/patient-activity',
-    name: 'PatientActivity',
-    component: PatientActivity,
+    name: 'DoctorDashboard',
+    component: DoctorDashboard,
   },
 
   {

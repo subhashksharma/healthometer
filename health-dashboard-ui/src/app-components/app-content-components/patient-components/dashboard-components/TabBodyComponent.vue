@@ -27,10 +27,10 @@
 
 import { ref } from 'vue'
 
-import OverviewComponent from '@/app-components/app-content-components/dashboard-components/OverviewComponent.vue'
-import StatComponent from '@/app-components/app-content-components/dashboard-components/StatComponent.vue'
-import DemographicsComponent from '@/app-components/app-content-components/dashboard-components/DemographicsComponent.vue'
-import MoreComponent from '@/app-components/app-content-components/dashboard-components/MoreComponent.vue'
+import OverviewComponent from '@/app-components/app-content-components/patient-components/dashboard-components/OverviewComponent.vue'
+import StatComponent from '@/app-components/app-content-components/patient-components/dashboard-components/StatComponent.vue'
+import DemographicsComponent from '@/app-components/app-content-components/patient-components/dashboard-components/DemographicsComponent.vue'
+import MoreComponent from '@/app-components/app-content-components/patient-components/dashboard-components/MoreComponent.vue'
 export default {
     
 name:"TabBodyComponent",

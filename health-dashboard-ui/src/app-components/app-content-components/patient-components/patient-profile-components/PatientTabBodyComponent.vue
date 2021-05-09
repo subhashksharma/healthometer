@@ -21,11 +21,10 @@
 
 import { ref } from 'vue'
 
-import PatientOverviewComponent from '@/app-components/app-content-components/patient-components/PatientOverviewComponent.vue'
-import PatientDemographicsComponent from '@/app-components/app-content-components/patient-components/PatientDemographicsComponent.vue'
-import PatientReportComponent from '@/app-components/app-content-components/patient-components/PatientReportComponent.vue'
-import PatientBillingComponent from '@/app-components/app-content-components/patient-components/PatientBillingComponent.vue'
-//import PatientBillingComponent from '@/app-components/app-content-components/patient-components/PatientBillingComponent.vue'
+import PatientOverviewComponent from '@/app-components/app-content-components/patient-components/patient-profile-components/PatientOverviewComponent.vue'
+import PatientDemographicsComponent from '@/app-components/app-content-components/patient-components/patient-profile-components/PatientDemographicsComponent.vue'
+import PatientReportComponent from '@/app-components/app-content-components/patient-components/patient-profile-components/PatientReportComponent.vue'
+import PatientBillingComponent from '@/app-components/app-content-components/patient-components/patient-profile-components/PatientBillingComponent.vue'
 export default {
     
 name:"PatientTabBodyComponent",

@@ -9,12 +9,12 @@
 <script>
 import AppHeader from '@/app-components/app-shared-components/AppHeader.vue'
 import AppFooter from '@/app-components/app-shared-components/AppFooter.vue'
-import DashBoardMainComponent from '@/app-components/app-content-components/dashboard-components/DashBoardMainComponent.vue'
+import DashBoardMainComponent from '@/app-components/app-content-components/patient-components/dashboard-components/DashBoardMainComponent.vue'
 import { onMounted, ref } from 'vue'
 import { useState } from  '@/app-store/index'
 
 export default {
-  name: 'HealthDashboardHome',
+  name: 'PatientHealthDashboard',
   components: {
     AppHeader,
     AppFooter,

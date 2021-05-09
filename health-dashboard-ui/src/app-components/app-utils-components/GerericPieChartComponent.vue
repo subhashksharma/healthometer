@@ -7,7 +7,7 @@ import { defineComponent, onMounted, ref, toRefs } from 'vue';
 import { getChartData } from '@/app-helpers/chartServerData.js';
 import Chart from 'chart.js';
 export default {
-  name: 'GenericChartComponent',
+  name: 'GenericPieChartComponent',
   props: {
     dataCheck: String,
   },

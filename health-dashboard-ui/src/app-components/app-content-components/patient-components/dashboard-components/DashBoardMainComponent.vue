@@ -11,8 +11,9 @@
 </template>
 
 <script>
-import DashBoardHeaderComponent from '@/app-components/app-content-components/dashboard-components/DashBoardHeaderComponent.vue'
-import TabBodyComponent from '@/app-components/app-content-components/dashboard-components/TabBodyComponent.vue'
+
+import DashBoardHeaderComponent from '@/app-components/app-content-components/patient-components/dashboard-components/DashBoardMainComponent.vue'
+import TabBodyComponent from '@/app-components/app-content-components/patient-components/dashboard-components/TabBodyComponent.vue'
 
 export default {
     name:'DashBoardMainComponent',

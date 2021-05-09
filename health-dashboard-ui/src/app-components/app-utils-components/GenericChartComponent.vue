@@ -3,20 +3,22 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, ref , toRefs} from 'vue';
+import {onMounted, ref , toRefs} from 'vue';
 import {getChartData} from "@/app-helpers/chartServerData.js"
 import  Chart  from 'chart.js'
 export default {
   name: 'GenericChartComponent',
 props: {
-    dataCheck : String 
+  	nameCheck: {
+      type: String,
+  	}
   },
 
    setup(props) {
 
-  //const { dataCheck } = toRefs(props)
+  const { nameCheck } = toRefs(props)
 
-  console.log(props.dataCheck)
+  console.log("Props VValue " + nameCheck.value)
 
   const refVal = getChartData(0);
  const data = ref(null);

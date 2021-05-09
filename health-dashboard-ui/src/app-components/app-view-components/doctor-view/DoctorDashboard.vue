@@ -8,12 +8,12 @@
 <script>
 import AppHeader from '@/app-components/app-shared-components/AppHeader.vue'
 import AppFooter from '@/app-components/app-shared-components/AppFooter.vue'
-import DoctorDashboardMainComponent from '@/app-components/app-doctor-dashboard-components/DoctorDashboardMainComponent.vue'
+import DoctorDashboardMainComponent from '@/app-components/app-content-components/doctor-components/DoctorDashboardMainComponent.vue'
 import { onMounted, ref } from 'vue'
 import { useState } from  '@/app-store/index'
 
 export default {
-  name: 'DoctorDashboardHome',
+  name: 'DoctorDashboard',
   components: {
     AppHeader,
     AppFooter,

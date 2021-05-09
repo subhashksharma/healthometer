@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import PatientSideBarComponent from '@/app-components/app-content-components/patient-components/PatientSideBarComponent.vue'
-import PatientTabBodyComponent from '@/app-components/app-content-components/patient-components/PatientTabBodyComponent.vue'
+import PatientSideBarComponent from '@/app-components/app-content-components/patient-components/patient-profile-components/PatientSideBarComponent.vue'
+import PatientTabBodyComponent from '@/app-components/app-content-components/patient-components/patient-profile-components/PatientTabBodyComponent.vue'
 
 
 export default {
