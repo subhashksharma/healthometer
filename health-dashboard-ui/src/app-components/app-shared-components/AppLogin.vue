@@ -72,7 +72,7 @@ setup( ) {
             state.showSpinner = false;
             state.isLoggedIn = true;
             if(state.loginAs==='patient'){
-              router.push('health-dashboard')
+              router.push('patient-health-dashboard')
             }
             if(state.loginAs==='doctor'){
               router.push('doctor-dashboard')

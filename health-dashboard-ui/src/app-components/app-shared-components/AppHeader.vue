@@ -2,7 +2,7 @@
       <div class="az-header">
       <div class="container">
         <div class="az-header-left">
-          <router-link to="/health-dashboard"><a class="az-logo"><span style="color : #5b47fb">Health "O" Meter</span></a></router-link> 
+          <router-link to="/patient-health-dashboard"><a class="az-logo"><span style="color : #5b47fb">Health "O" Meter</span></a></router-link> 
            <!-- <a href="index.html" class="az-logo"><span></span> Health "O" Meter</a>  -->
           <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
         </div><!-- az-header-left -->

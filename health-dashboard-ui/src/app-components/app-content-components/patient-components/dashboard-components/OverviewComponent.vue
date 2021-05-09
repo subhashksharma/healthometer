@@ -41,7 +41,7 @@
 import { onMounted, ref } from 'vue'
 import GenericChartComponent from '@/app-components/app-utils-components/GenericChartComponent.vue'
 import {getChartData} from "@/app-helpers/chartServerData.js"
-
+import  Chart  from  'chart.js';
 export default {
      name:'OverviewComponent',
      components:{

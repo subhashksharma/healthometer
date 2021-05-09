@@ -34,5 +34,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/azia.scss';
+ @import '@/assets/scss/azia.scss' 
 </style>
