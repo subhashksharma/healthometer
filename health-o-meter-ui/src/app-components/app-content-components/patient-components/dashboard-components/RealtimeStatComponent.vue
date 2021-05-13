@@ -1,6 +1,6 @@
 <template>
   <div class="row row-sm">
-    <div class="col-sm-6 mg-t-20 mg-lg-t-0">
+    <div class="col-sm-6 mg-t-20 mg-lg-t-0 mg-b-20">
       <div class="card card-dashboard-four">
         <div class="card-header">
           <h6 class="card-title">Sessions by Channel</h6>
@@ -8,7 +8,7 @@
         <!-- card-header -->
         <div class="card-body row">
           <div class="col-md-6 d-flex align-items-center">
-            <GerericPieChartComponent></GerericPieChartComponent>
+         <GerericPieChartComponent></GerericPieChartComponent> 
           </div>
           <!-- col -->
           <div class="col-md-6 col-lg-5 mg-lg-l-auto mg-t-20 mg-md-t-0">
@@ -100,7 +100,7 @@
       <!-- card-dashboard-four -->
     </div>
 
-    <div class="col-sm-6 mg-t-20 mg-lg-t-0">
+    <div class="col-sm-6 mg-t-20 mg-lg-t-0 mg-b-20">
       <div class="card card-dashboard-four">
         <div class="card-header">
           <h6 class="card-title">Real time feed</h6>
@@ -117,7 +117,6 @@
         <!-- card-header -->
 
         <div class="card-body row">
-          <div class="table-responsive" style="height:300px">
             <table class="table table-hover mg-b-0">
               <thead>
                 <tr>
@@ -138,14 +137,45 @@
         </div>
         <!-- card-body -->
       </div>
+
       <!-- card-dashboard-four -->
+
+
+
+    <div class="col-sm-6 mg-t-20 mg-lg-t-0">
+      <div class="card card-dashboard-four">
+        <div class="card-header">
+          <h6 class="card-title">Real time Oxygen level</h6>
+        </div>
+        <!-- card-header -->
+
+        <div class="card-body row">
+              <GenericRealTimeChartComponent v-bind:chartName="'realtimeOxyegen'"></GenericRealTimeChartComponent>
+          </div>
+        </div>
+        <!-- card-body -->
+      </div>
+
+    <div class="col-sm-6 mg-t-20 mg-lg-t-0">
+      <div class="card card-dashboard-four">
+        <div class="card-header">
+          <h6 class="card-title">Real time heart rate level</h6>
+        </div>
+        <!-- card-header -->
+
+        <div class="card-body row">
+              <GenericRealTimeChartComponent v-bind:chartName="'realtimeHeart'"></GenericRealTimeChartComponent>
+          </div>
+        </div>
+        <!-- card-body -->
+      </div>
+
     </div>
-  </div>
 </template>
 
 <script>
 import GerericPieChartComponent from '@/app-components/app-utils-components/GerericPieChartComponent.vue';
-
+import GenericRealTimeChartComponent from '@/app-components/app-utils-components/GenericRealTimeChartComponent.vue'
 import io from 'socket.io-client';
 
 let socket = io({
@@ -156,6 +186,7 @@ export default {
   name: 'RealtimeStatComponent',
   components: {
     GerericPieChartComponent,
+    GenericRealTimeChartComponent
   },
   data() {
     return {
@@ -203,4 +234,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+</style>
