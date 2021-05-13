@@ -60,6 +60,10 @@ export class ServerMain {
 
     this.io?.on('connect', (socket: SocketIO.Socket) => {
       console.log('Connected client on port %s.', this.port);
+      console.log(
+        'Print second time ::Connected client on port %s.',
+        this.port
+      );
       // socket.on('message', (m: Message) => {
       //   console.log('[server](message): %s', JSON.stringify(m));
       //   this.io?.emit('message', m);
