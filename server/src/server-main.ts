@@ -9,7 +9,7 @@ import mongoStart from './databaseutils/mongoConnect';
 import { RouteController } from './route-controller';
 
 export class ServerMain {
-  public static readonly PORT: number = 8080;
+  public static readonly PORT: number = 3000;
   private app?: express.Application;
   private server?: http.Server;
   private io?: SocketIO.Server;

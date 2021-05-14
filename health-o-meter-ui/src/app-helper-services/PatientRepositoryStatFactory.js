@@ -1,21 +1,21 @@
-import Client from './Clients/AxiosClient';
+import httpClient from './client/AxiosClient';
 const resource = '/users';
 
 export default {
   get() {
-    return Client.get(`${resource}`);
+    return httpClient.get(`${resource}`);
   },
   getUser(id) {
-    return Client.get(`${resource}/${id}`);
+    return httpClient.get(`${resource}/${id}`);
   },
   create(payload) {
-    return Client.post(`${resource}`, payload);
+    return httpClient.post(`${resource}`, payload);
   },
   update(payload, id) {
-    return Client.put(`${resource}/${id}`, payload);
+    return httpClient.put(`${resource}/${id}`, payload);
   },
   delete(id) {
-    return Client.delete(`${resource}/${id}`);
+    return httpClient.delete(`${resource}/${id}`);
   },
 
   // MANY OTHER ENDPOINT RELATED STUFFS

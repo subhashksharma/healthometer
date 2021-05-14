@@ -21,15 +21,11 @@ export default new Vuex.Store({
     spinner: false,
     screenLock: false,
     loginInfo: {
-      appName: '',
-      clinicId: '',
       userId: '',
       userName: '',
       firstName: '',
       lastName: '',
-      instanceKey: '',
       token: '',
-      GSM: '',
       isLoggedIn: false,
     },
   },
@@ -45,7 +41,7 @@ export default new Vuex.Store({
     spinner: (state) => {
       return state.spinner;
     },
-    validateLogin: (state) => {
+    getLoginInfo: (state) => {
       return state.loginInfo;
     },
   },
@@ -53,7 +49,8 @@ export default new Vuex.Store({
     versionAction(context) {
       context.commit('setApplicationVersion', this.state.version);
     },
-    validateLoginAction: (context, userData) => {
+    loginInfoAction: (context, userData) =>
+    {
       context.commit('setLoginInfo', userData);
     },
   },
@@ -67,7 +64,7 @@ export default new Vuex.Store({
     setScreenLock: (state, screenLock) => {
       state.screenLock = screenLock;
     },
-    setValidateLoginInfo: (state, payload) => {
+    setLoginInfo: (state, payload) => {
       state.loginInfo = payload;
     },
   },

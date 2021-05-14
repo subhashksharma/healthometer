@@ -48,19 +48,16 @@
 
 <script>
 import router from '@/app-router/AppRouter';
-
+import AuthRepository from '@/app-helper-services/repository/AuthRepository.js'
 export default {
 name:'AppLogin',
  data() {
     return {
-      email: 'demo@demo.com',
-      password: 'demo',
+      email: 'subhash@gmail.com',
+      password: 'subhash',
     };
   },
-
 methods:{
-    
-
    setLoginAs(event) {
     this.loginAs = event.target.value;
   },
@@ -69,25 +66,43 @@ methods:{
        console.log(this.email);
         this.$store.commit("setSpinner", true);
             this.$store.commit("setScreenLock", true);
-      if(this.email==='demo@demo.com' && this.password ==='demo'){ 
-        await new Promise(resolve => setTimeout(resolve, 300));
+
+          const loginInfo = await AuthRepository.signInUser({email :this.email, password: this.password});
+if(loginInfo) {
+  console.log(loginInfo.data);
             this.$store.commit("setSpinner", false);
+
+  
             this.$store.commit("setScreenLock", false);
-            //this.isLoggedIn = true;
-            this.$store.getters.validateLogin.isLoggedIn = true;
-            this.$store.commit("setValidateLoginInfo", this.$store.getters.validateLogin);
+
+            this.$store.dispatch("loginInfoAction", {
+              userId: loginInfo.data.id,
+              userName: loginInfo.data.email,
+              firstName:loginInfo.data.firstName,
+              lastName: loginInfo.data.lastName,
+              token: loginInfo.data.token,
+              isLoggedIn: false,
+          });
              router.push('patient-health-dashboard')
-           
-            // if(state.loginAs==='doctor'){
-            //   router.push('doctor-dashboard')
-            // } 
-      }else{
-         await new Promise(resolve => setTimeout(resolve, 300));
-            this.$store.commit("setSpinner", false);
-            this.$store.commit("setScreenLock", false);
-            this.isLoggedIn = false;
-            state.error ='invalid login'
-      }   
+}
+            
+
+
+      // if(this.email==='demo@demo.com' && this.password ==='demo'){ 
+      //   await new Promise(resolve => setTimeout(resolve, 300));
+      //       this.$store.commit("setSpinner", false);
+      //       this.$store.commit("setScreenLock", false);
+      //       this.$store.getters.validateLogin.isLoggedIn = true;
+      //       this.$store.commit("setValidateLoginInfo", this.$store.getters.validateLogin);
+      //        router.push('patient-health-dashboard')
+
+      // }else{
+      //    await new Promise(resolve => setTimeout(resolve, 300));
+      //       this.$store.commit("setSpinner", false);
+      //       this.$store.commit("setScreenLock", false);
+      //       this.isLoggedIn = false;
+      //       state.error ='invalid login'
+      // }   
   }
   
 }
