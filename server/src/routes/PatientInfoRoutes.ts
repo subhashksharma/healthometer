@@ -7,21 +7,17 @@ const router = express.Router();
 router.post('/patient', async (req: Request, res: Response) => {
   console.log(`POST :: /patient----  ::::: ${JSON.stringify(req.body)} `);
   const {
-    patientId,
     patientFirstName,
     patientLastName,
     patientMiddleName,
     patientSuffix,
-    patientbdy,
+    patientDob,
     patientHeight,
     created,
     updated,
   } = req.body;
 
-  let patientDob = new Date();
-  console.log(patientDob);
   const patientData = await PatientController.CreatePatient({
-    patientId,
     patientFirstName,
     patientLastName,
     patientMiddleName,
@@ -41,5 +37,24 @@ router.post('/patient', async (req: Request, res: Response) => {
     });
   res.status(201).send(patientData);
 });
+
+
+router.get('/patient/:id', async (req: Request, res: Response) => {
+  console.log(`GET :: /patient ::::: ${req.params.id}`);
+
+  const patientData = await PatientController.getPatientBaseOnCriteria({
+    _id: req.params.id,
+  })
+    .then((patient) => {
+      return patient;
+    })
+    .catch((err) => {
+      console.log(err);
+      console.error;
+      res.status(500).send(err);
+    });
+  res.status(201).send(patientData);
+});
+
 
 export { router as patientInfoRoutes };
