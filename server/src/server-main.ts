@@ -43,6 +43,7 @@ export class ServerMain {
 
   private config(): void {
     this.port = process.env.PORT || ServerMain.PORT;
+    process.env.JWT_KEY = '3000';
     mongoStart(
       'mongodb+srv://subhash:subhash@shopping-btf66.gcp.mongodb.net/authservice'
     );
