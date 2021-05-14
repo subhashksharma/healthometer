@@ -1,55 +1,90 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
-export interface IPatient extends Document {
-  PATIENT_ID: String;
-  PATIENT_FIRST_NAME: String;
-  PATIENT_LAST_NAME: String;
-  PATIENT_MIDDLE_NAME: String;
-  PATIENT_SUFFIX: String;
-  PATIENT_DOB: Date;
-  PATIENT_HEIGHT: Number;
-  CREATED: Date;
-  UPDATED: Date;
-}
 
 const PatientSchema: Schema = new Schema({
-  PATIENT_ID: {
+  patientId: {
     type: String,
     required: true,
     unique: true,
   },
-  PATIENT_FIRST_NAME: {
+  patientFirstName: {
     type: String,
     required: true,
   },
-  PATIENT_LAST_NAME: {
+  patientLastName: {
     type: String,
     required: true,
   },
-  PATIENT_MIDDLE_NAME: {
+  patientMiddleName: {
     type: String,
     required: true,
   },
-  PATIENT_SUFFIX: {
+  patientSuffix: {
     type: String,
     required: true,
   },
-  PATIENT_DOB: {
+  patientDob: {
     type: Date,
     required: true,
   },
-  PATIENT_HEIGHT: {
+  patientHeight: {
     type: Number,
     required: true,
   },
-  CREATED: {
+  created: {
     type: Date,
-    required: false,
+    default: Date.now,
   },
-  UPDATED: {
+
+  updated: {
     type: Date,
-    required: false,
+    default: Date.now,
+  },
+ 
+},
+{
+  toJSON: {
+    transform(doc, ret) {
+      ret.id = ret._id;
+      delete ret._id;
+    },
   },
 });
 
-export default mongoose.model<IPatient>('User', PatientSchema);
+export interface IPatientDto  {
+  patientId: String;
+  patientFirstName: String;
+  patientLastName: String;
+  patientMiddleName: String;
+  patientSuffix: String;
+  patientDob: Date;
+  patientHeight: Number;
+  created: Date;
+  updated: Date;
+}
+
+export interface IPatientDocument extends Document
+{
+  patientId: String;
+  patientFirstName: String;
+  patientLastName: String;
+  patientMiddleName: String;
+  patientSuffix: String;
+  patientDob: Date;
+  patientHeight: Number;
+  created: Date;
+  updated: Date;
+}
+
+export interface PatientModel extends Model<IPatientDocument> {
+  build(attrs: IPatientDto): IPatientDocument 
+}
+
+
+PatientSchema.statics.build = (attrs: IPatientDto) => {
+  return new Patient(attrs);
+};
+
+const Patient = mongoose.model<IPatientDocument, PatientModel>('Patient', PatientSchema);
+
+export {Patient }

@@ -1,58 +1,49 @@
-import Patient, { IPatient } from '../models/patientInformation/Patient';
+import {
+  Patient,
+  IPatientDto,
+  IPatientDocument,
+  PatientModel,
+} from '../models/patientInformation/Patient';
 
-interface ICreatePatientInput {
-  patientId: IPatient['PATIENT_ID'];
-  patientFirstName: IPatient['PATIENT_FIRST_NAME'];
-  PatientLastName: IPatient['PATIENT_LAST_NAME'];
-  PatientMiddleName: IPatient['PATIENT_MIDDLE_NAME'];
-  patientSuffix: IPatient['PATIENT_SUFFIX'];
-  patientDob: IPatient['PATIENT_DOB'];
-  patientHeight: IPatient['PATIENT_HEIGHT'];
-  created: IPatient['CREATED'];
-  updated: IPatient['UPDATED'];
-}
+// interface ICreatePatientInput {
+//   patientId: IPatientDocument['PATIENT_ID'];
+//   patientFirstName: IPatientDocument['PATIENT_FIRST_NAME'];
+//   PatientLastName: IPatientDocument['PATIENT_LAST_NAME'];
+//   PatientMiddleName: IPatientDocument['PATIENT_MIDDLE_NAME'];
+//   patientSuffix: IPatientDocument['PATIENT_SUFFIX'];
+//   patientDob: IPatientDocument['PATIENT_DOB'];
+//   patientHeight: IPatientDocument['PATIENT_HEIGHT'];
+//   created: IPatientDocument['CREATED'];
+//   updated: IPatientDocument['UPDATED'];
+// }
 
 async function CreatePatient({
   patientId,
   patientFirstName,
-  PatientLastName,
-  PatientMiddleName,
+  patientLastName,
+  patientMiddleName,
   patientSuffix,
   patientDob,
   patientHeight,
   created,
   updated,
-}: ICreatePatientInput): Promise<IPatient> {
-  return Patient.create({
+}: IPatientDto): Promise<IPatientDocument>
+{
+  const patientTobeSave : IPatientDocument = Patient.build({
     patientId,
     patientFirstName,
-    PatientLastName,
-    PatientMiddleName,
+    patientLastName,
+    patientMiddleName,
     patientSuffix,
     patientDob,
     patientHeight,
     created,
-    updated,
-  })
-    .then((data: IPatient) => {
-      return data;
-    })
-    .catch((error: Error) => {
-      throw error;
-    });
-}
-
-async function getPatient(id: String): Promise<IPatient> {
-  return Patient.find({ patientId: id })
-    .then((data: IPatient) => {
-      return data;
-    })
-    .catch((error: Error) => {
-      throw error;
-    });
+    updated
+  });
+  console.log(`Patient to saved : ${patientTobeSave}`)
+  return await patientTobeSave.save();
 }
 
 export default {
   CreatePatient,
-  getPatient,
 };

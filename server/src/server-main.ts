@@ -26,14 +26,6 @@ export class ServerMain {
   private createApp(): void {
     this.app = express();
     this.app.use(cors());
-    const route = new RouteController(this.app);
-  }
-
-  private createServer(): void {
-    this.server = http.createServer(this.app);
-  }
-
-  private config(): void {
     this.app?.set('trust proxy', true);
     this.app?.use(json());
     this.app?.use(
@@ -42,8 +34,15 @@ export class ServerMain {
         secure: false, //process.env.NODE_ENV !== "test",
       })
     );
-    this.port = process.env.PORT || ServerMain.PORT;
+    const route = new RouteController(this.app);
+  }
 
+  private createServer(): void {
+    this.server = http.createServer(this.app);
+  }
+
+  private config(): void {
+    this.port = process.env.PORT || ServerMain.PORT;
     mongoStart(
       'mongodb+srv://subhash:subhash@shopping-btf66.gcp.mongodb.net/authservice'
     );
