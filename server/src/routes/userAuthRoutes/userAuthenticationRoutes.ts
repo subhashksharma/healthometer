@@ -2,11 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import { body } from 'express-validator';
 import jwt from 'jsonwebtoken';
 
-import {
-  validateRequest,
-  BadRequestError,
-  curretlyLoggerUser,
-} from '@commonauth/common';
+import { validateRequest, BadRequestError } from '@commonauth/common';
 import { UserModel } from '../../models/userModel/usermodel';
 import { Password } from '../../models/userModel/password';
 
@@ -25,14 +21,14 @@ router.post(
   async (req: Request, res: Response, next: NextFunction) => {
     console.log(`/auth/api/users/signin`);
 
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
     const userData = await UserModel.findOne({ email });
     if (!userData) {
       res.status(401).send({ error: 'This is not a valid user credentials' });
       throw new BadRequestError('This is not a valid user credentials');
     }
     const matchPassword = await Password.compare(userData.password, password);
-    if (!matchPassword) {
+    if (!matchPassword || userData.role !== role) {
       res
         .status(401)
         .send({ error: 'something wrong with your username or password' });
@@ -45,6 +41,7 @@ router.post(
         email: userData.email,
         firstName: userData.firstName,
         lastName: userData.lastName,
+        role: userData.role,
       },
       process.env.JWT_KEY!
     );
@@ -53,11 +50,6 @@ router.post(
     req.session = {
       jwt: userJwt,
     };
-
-    let role = '';
-    if (userData.email === 'subhash.bvb@gmail.com') {
-      role = 'Admin';
-    }
     // console.log(req.session);
     res.status(200).send({
       id: userData.id,
@@ -65,7 +57,7 @@ router.post(
       firstName: userData.firstName,
       lastName: userData.lastName,
       token: userJwt,
-      role,
+      role: userData.role,
     });
   }
 );
@@ -92,7 +84,7 @@ router.post(
   validateRequest,
   async (req: Request, res: Response) => {
     console.log(`/auth/api/users/signup called`);
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email, password, role } = req.body;
 
     const existingUser = await UserModel.findOne({ email });
     if (existingUser) {
@@ -105,6 +97,7 @@ router.post(
       lastName,
       email,
       password,
+      role,
     });
     await userData.save();
 
@@ -115,6 +108,7 @@ router.post(
         email: userData.email,
         firstName: userData.firstName,
         lastName: userData.lastName,
+        role: userData.role,
       },
       process.env.JWT_KEY!
     );
@@ -130,6 +124,7 @@ router.post(
       firstName: userData.firstName,
       lastName: userData.lastName,
       token: userJwt,
+      role: userData.role,
     });
   }
 );

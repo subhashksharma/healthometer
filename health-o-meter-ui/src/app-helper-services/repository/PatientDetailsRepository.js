@@ -1,4 +1,4 @@
-import httpClient from './Clients/AxiosClient';
+import { httpClient } from '../client/AxiosClient';
 const resource = '/patient-details';
 
 export default {

@@ -1,5 +1,4 @@
 <template>
-   
           <div class="az-dashboard-one-title">
             <div>
               <h2 class="az-dashboard-title">Hi, welcome back!</h2>
@@ -31,10 +30,14 @@
 </template>
 
 <script>
-  
 export default {
     name : 'PatientDashBoardHeaderComponent',
    
+   data() {
+    return {
+      username: "Kaperskyguru"
+    };
+  },
 }
 </script>
 

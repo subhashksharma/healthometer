@@ -6,6 +6,7 @@ interface UserAtts {
   lastName: string;
   email: string;
   password: string;
+  role: string;
 }
 
 interface UserDataModel extends mongoose.Model<UserDoc> {
@@ -17,26 +18,31 @@ interface UserDoc extends mongoose.Document {
   lastName: string;
   email: string;
   password: string;
+  role: string;
 }
 
 const userSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
-      required: "true",
+      required: 'true',
     },
     lastName: {
       type: String,
-      require: "true",
+      require: 'true',
     },
 
     email: {
       type: String,
-      required: "true",
+      required: 'true',
     },
     password: {
       type: String,
-      require: "true",
+      require: 'true',
+    },
+    role: {
+      type: String,
+      require: 'true',
     },
   },
   {

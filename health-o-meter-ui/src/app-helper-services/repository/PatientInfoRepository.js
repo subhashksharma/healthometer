@@ -1,5 +1,5 @@
-import httpClient from '../client/AxiosClient';
-const resource = '/patient';
+import { httpClient } from '../client/AxiosClient';
+const resource = '/api/patient';
 
 export default {
   getPatient(id) {
