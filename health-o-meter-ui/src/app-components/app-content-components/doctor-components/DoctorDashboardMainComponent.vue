@@ -1,22 +1,24 @@
 <template>
-<div class="az-content az-content-dashboard">
-      <div class="container">
-        
-        <div class="az-content-body">
+  <div class="az-content az-content-profile">
+      <div class="container mn-ht-100p">
+        <DoctorSideBarComponent></DoctorSideBarComponent>
+        <DoctorTabBodyComponent></DoctorTabBodyComponent>
+      </div><!-- container -->
+    </div><!-- az-content -->
     
-            I am doctor dash baord
-        </div>
-      </div>
-</div>
 </template>
 
 <script>
+import DoctorSideBarComponent from '@/app-components/app-content-components/doctor-components/DoctorSideBarComponent.vue'
+import DoctorTabBodyComponent from '@/app-components/app-content-components/doctor-components/DoctorTabBodyComponent.vue'
+
 
 export default {
-    name:'DoctorDashboardMainComponent',
-    components: {
-
-  },
+  name:'DoctorDashboardMainComponent',
+  components:{
+    DoctorSideBarComponent,
+    DoctorTabBodyComponent
+  }
 }
 </script>
 

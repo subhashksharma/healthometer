@@ -36,13 +36,11 @@ components: {
     
   },
 
-  setup(props) {
-      const activetab = ref(1)
-
-      return {
-        activetab  
-      }
+ data()  {
+  return {
+    activetab :1
   }
+}
 }
  
 </script>

@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import store from '@/app-store/AppCentralStore';
 import { Role } from '@/app-helper-services/Role';
 
-import AppLandingComponent from '@/app-components/app-view-components/patient-view/AppLandingComponent.vue';
+import AppLandingComponent from '@/app-components/app-view-components/AppLandingComponent.vue';
 import PatientHealthDashboard from '@/app-components/app-view-components/patient-view/PatientHealthDashboard.vue';
 import PatientProfile from '@/app-components/app-view-components/patient-view/PatientProfile.vue';
 import DoctorDashboardMainComponent from '@/app-components/app-content-components/doctor-components/DoctorDashboardMainComponent.vue';
