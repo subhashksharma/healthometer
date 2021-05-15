@@ -72,7 +72,7 @@
 
 <script>
 import router from '@/app-router/AppRouter';
-import AuthRepository from '@/app-helper-services/repository/AuthRepository.js';
+import AuthRepository from '@/app-helper-services/repository/AuthRepository';
 export default {
   name: 'AppLogin',
   data() {

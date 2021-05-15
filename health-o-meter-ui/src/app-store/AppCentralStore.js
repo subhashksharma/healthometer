@@ -50,6 +50,7 @@ export default new Vuex.Store({
       context.commit('setApplicationVersion', this.state.version);
     },
     loginInfoAction: (context, userData) => {
+      console.log(' got called' + userData);
       context.commit('setLoginInfo', userData);
     },
   },

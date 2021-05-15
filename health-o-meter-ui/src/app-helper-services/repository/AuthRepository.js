@@ -5,8 +5,8 @@ export default {
   signInUser(payload) {
     return httpClient.post(`${resource}/signin`, payload);
   },
-  signOutUser(id) {
-    return httpClient.get(`${resource}/signout/${id}`);
+  signOutUser() {
+    return httpClient.post(`${resource}/signout`);
   },
 
   // MANY OTHER ENDPOINT RELATED STUFFS
