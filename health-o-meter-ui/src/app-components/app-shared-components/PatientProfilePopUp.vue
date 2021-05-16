@@ -55,8 +55,8 @@ export default {
         .then((logoutInfo) => {
           this.$store.commit('setSpinner', false);
           this.$store.commit('setScreenLock', false);
-
-           this.$store.this.state.logoutInfo = null
+          this.$store.commit('setLoginInfo', null)
+           //this.$store.this.state.logoutInfo = null
            router.push('/');
 
           return logoutInfo;

@@ -90,7 +90,7 @@
                 </div>
               </div><!-- col -->
               <div class="col-md-5 col-xl-4 mg-t-40 mg-md-t-0">
-                <div class="az-content-label tx-13 mg-b-20">Recent Visits</div>
+                <div class="az-content-label tx-12 mg-b-20">Recent Visits</div>
                 <div class="az-traffic-detail-item">
                   <div>
                     <span>People with title Founder &amp; CEO</span>
@@ -134,7 +134,7 @@
 
             <div class="row">
               <div class="col-md-7 col-xl-8">
-                <div class="az-content-label tx-13 mg-b-25">Work &amp; Education</div>
+                <div class="az-content-label tx-12 mg-b-25">Work &amp; Education</div>
                 <div class="az-profile-work-list">
                   <div class="media">
                     <div class="media-logo bg-success"><i class="icon ion-logo-whatsapp"></i></div>
@@ -155,7 +155,7 @@
                 </div><!-- az-profile-work-list -->
               </div><!-- col -->
               <div class="col-md-5 col-xl-4 mg-t-40 mg-md-t-0">
-                <div class="az-content-label tx-13 mg-b-25">Patient Contact Information</div>
+                <div class="az-content-label tx-12 mg-b-25">Patient Contact Information</div>
                 <div class="az-profile-contact-list">
                   <div class="media">
                     <div class="media-icon"><i class="icon ion-md-phone-portrait"></i></div>

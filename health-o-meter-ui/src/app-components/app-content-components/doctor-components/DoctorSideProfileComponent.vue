@@ -19,7 +19,7 @@
               Genius, Compiler, Powerful Multitasker, Fantasy Fruit Loop, Replacement President of a Major Soft Drink Manufacturer. <a href="">More</a>
             </div><!-- az-profile-bio -->
             <hr class="mg-y-30">
-            <label class="az-content-label tx-13 mg-b-20">Medical Provider</label>
+            <label class="az-content-label tx-12 mg-b-20">Medical Provider</label>
             
           </div><!-- az-profile-overview -->
 </template>

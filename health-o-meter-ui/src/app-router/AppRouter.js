@@ -19,23 +19,23 @@ export default new Router({
     {
       path: '/patient-health-dashboard',
       name: 'PatientHealthDashboard',
-      beforeEnter : guardMyroute,
+      beforeEnter: guardMyroute,
       component: PatientHealthDashboard,
-      meta: { authorize: [] } 
+      meta: { authorize: [Role.Doctor, Role.Patient] },
     },
 
     {
       path: '/doctor-dashboard',
       name: 'DoctorDashboardMainComponent',
-      beforeEnter : guardMyroute,
+      beforeEnter: guardMyroute,
       component: DoctorDashboardMainComponent,
-      meta: { authorize: [Role.Doctor] } 
+      meta: { authorize: [Role.Doctor] },
     },
 
     {
       path: '/patient-profile',
       name: 'PatientProfile',
-      beforeEnter : guardMyroute,
+      beforeEnter: guardMyroute,
       component: PatientProfile,
     },
 
@@ -54,10 +54,18 @@ function guardMyroute(to, from, next)
 
   const { authorize } = to.meta;
   if (authorize) {
-    if (!store.getters.getLoginInfo.token) {
-      next('/'); 
+    if (store.getters.getLoginInfo && !store.getters.getLoginInfo.token) {
+      next('/');
     }
-    if (authorize.length && !authorize.includes(store.getters.getLoginInfo.role)) {
+
+    if (
+      authorize.length &&
+      !authorize.includes(
+        store.getters.getLoginInfo && store.getters.getLoginInfo.role
+          ? store.getters.getLoginInfo.role
+          : null
+      )
+    ) {
       return next({ path: '/' });
     }
   }

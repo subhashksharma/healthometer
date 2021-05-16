@@ -26,7 +26,7 @@
 }
 
 .az-dashboard-text {
-  font-size: 13px;
+  font-size: 12px;
   margin-bottom: 0;
 }
 
@@ -61,7 +61,7 @@
         line-height: 1.2;
         letter-spacing: -.5px;
 
-        @include media-breakpoint-up(md) { font-size: 13px; }
+        @include media-breakpoint-up(md) { font-size: 12px; }
 
         &:last-child {
           color: $gray-600;
@@ -172,7 +172,7 @@
     .card-title {
       color: $gray-900;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1;
       margin-bottom: 3px;
     }
@@ -328,7 +328,7 @@
 
     p {
       margin-bottom: 0;
-      font-size: 13px;
+      font-size: 12px;
     }
   }
 
@@ -433,13 +433,13 @@
 
   .card-title {
     font-weight: 700;
-    font-size: 14px;
+    font-size: 13px;
     color: $gray-900;
     margin-bottom: 5px;
   }
 
   .card-text {
-    font-size: 13px;
+    font-size: 12px;
     margin-bottom: 0;
   }
 
@@ -459,7 +459,7 @@
 
   .card-title {
     font-weight: 700;
-    font-size: 14px;
+    font-size: 13px;
     color: $gray-900;
     margin-bottom: 0;
   }
@@ -490,7 +490,7 @@
 
   .card-title {
     font-weight: 700;
-    font-size: 14px;
+    font-size: 13px;
     color: $gray-900;
     margin-bottom: 5px;
   }
@@ -538,7 +538,7 @@
   border-color: $gray-300;
 
   .card-title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     margin-bottom: 5px;
   }

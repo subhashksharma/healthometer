@@ -10,9 +10,8 @@ let config = {
 
 const httpClient = axios.create(config);
 const authInterceptor = (config) => {
-  config.headers[
-    'Authorization'
-  ] = `Bearer ${store.getters.getLoginInfo.token}`;
+  config.headers['Authorization'] = `Bearer ${store.getters.getLoginInfo &&
+    store.getters.getLoginInfo.token}`;
   return config;
 };
 
