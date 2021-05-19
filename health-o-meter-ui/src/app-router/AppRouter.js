@@ -7,6 +7,8 @@ import AppLandingComponent from '@/app-components/app-view-components/AppLanding
 import PatientHealthDashboard from '@/app-components/app-view-components/patient-view/PatientHealthDashboard.vue';
 import PatientProfile from '@/app-components/app-view-components/patient-view/PatientProfile.vue';
 import DoctorDashboardMainComponent from '@/app-components/app-content-components/doctor-components/DoctorDashboardMainComponent.vue';
+import DoctorDashboard from '@/app-components/app-view-components/doctor-view/DoctorDashboard.vue';
+
 Vue.use(Router);
 export default new Router({
   mode: 'history',
@@ -16,6 +18,12 @@ export default new Router({
       name: 'AppLandingComponent',
       component: AppLandingComponent,
     },
+    {
+      path: '/doctor',
+      name: 'doctor',
+      component: DoctorDashboard,
+    },
+
     {
       path: '/patient-health-dashboard',
       name: 'PatientHealthDashboard',

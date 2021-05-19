@@ -1,8 +1,5 @@
 <template>
   <div class="az-profile-body">
-    
-    <hr class="mg-y-40" />
-
     <div class="row mg-b-20">
       <div class="col-md-7 col-xl-8">
         <div class="az-profile-view-chart">

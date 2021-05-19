@@ -1,8 +1,8 @@
 <template>
-  <div class="az-content az-content-profile">
-      <div class="container mn-ht-100p">
-        <DoctorSideBarComponent></DoctorSideBarComponent>
-        <DoctorTabBodyComponent></DoctorTabBodyComponent>
+  <div class="az-content pd-t-0">
+      <div class="container">
+        <div class="col-md-3 col-xl-3"><DoctorSideBarComponent></DoctorSideBarComponent></div>
+        <div class="col-md-9 col-xl-9"><DoctorTabBodyComponent></DoctorTabBodyComponent></div>
       </div><!-- container -->
     </div><!-- az-content -->
     
